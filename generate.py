@@ -78,7 +78,7 @@ def firstDeck(index_o_s, index_o_e, z):
 def secondDeck(index_o_e, z):
 
     y = [] # creates the deck that is to be filled and returned
-
+    random.seed(time.time())
     # loops from the card after index_of_end to the card at index: 51
     for x in range(index_o_e, 52):
         y.append(z[x])
@@ -92,6 +92,12 @@ def riffleShuffle(deck_one, deck_two):
     length_d1 = len(deck_one)
     length_d2 = len(deck_two)
 
+    arg = random.randint(1, 10)
+    if arg % 2 == 0:
+        deck_one.reverse()
+    else:
+        deck_two.reverse()    
+
     deck_three = []  # creates the deck that is to be filled and returned
 
     done_check = False  # a varible that is made to control the while structure
@@ -99,7 +105,7 @@ def riffleShuffle(deck_one, deck_two):
 
     # while loop runs until there are no cards left in a deck
     while not done_check:
-        random.seed(time.time())
+        
         cards_to_take = random.randint(1, 3)
 
         # runs the following if structure when the current deck choice is "deck_one"
@@ -198,7 +204,7 @@ def riffleShuffle(deck_one, deck_two):
             
             # for loop inserts the remaining cards into a random index of "deck_three"
             for x in range(0, len(deck_one)):
-                random.seed(time.time())
+ 
                 ran = random.randint(0, leng)
                 deck_three.insert(ran, deck_one[x])
 
@@ -219,7 +225,7 @@ def riffleShuffle(deck_one, deck_two):
 
             # for loop inserts the remaining cards into a random index of "deck_three"
             for x in range(0, len(deck_one)):
-                random.seed(time.time())
+
                 ran = random.randint(0, leng)
                 deck_three.insert(ran, deck_one[x])
 
