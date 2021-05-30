@@ -19,7 +19,6 @@ length = len(z)  # value: 52, index from 0 to 51
 #    print(f"{x} {z[x]}")
 
 # creates a temporary variable to store a random boolean value for use later on
-random.seed(time.time())
 temp_choice = random.randint(1, 2)
 
 if temp_choice == 1:
@@ -67,9 +66,7 @@ for v in range(0, 4):
 
     deck_three = riffleShuffle(deck_one, deck_two)
 
-    random.seed(time.time())
     deviation = random.randint(0, 3)
-    random.seed(time.time())
     temp_choice = random.randint(1, 2)
 
     if temp_choice == 1:
@@ -109,4 +106,5 @@ for v in range(0, 4):
         # fill and return the deck that was instructed, is set equal to "deck_two"
         deck_two = secondDeck(index_of_end, z)
 
-print(deck_three)       
+print(deck_three)        
+
